@@ -17,6 +17,29 @@
             https://nuget.bepinex.dev/v3/index.json
         </RestoreAdditionalProjectSources>
     </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>embedded</DebugType>
+
+        <ErrorReport>prompt</ErrorReport>
+        <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+
+        <OutputPath>bin\Debug\</OutputPath>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>false</DebugSymbols>
+        <DebugType>none</DebugType>
+
+        <ErrorReport>prompt</ErrorReport>
+        <DefineConstants>$(DefineConstants);RELEASE;TRACE</DefineConstants>
+
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
     
     <ItemGroup>
         <EmbeddedResource Include="Assets/**/*" />

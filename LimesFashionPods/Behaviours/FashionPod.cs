@@ -29,16 +29,6 @@ namespace LimesFashionPods.Behaviours
         public Transform fashionItemPos;
     #endif
 
-        private void Start()
-        {
-            var castedRes = gameObject;
-            var renderers = castedRes.GetComponentsInChildren<MeshRenderer>();
-           if (renderers.Length > 0 && castedRes.TryGetComponent<RegionMember>(out _))
-            {
-                MelonCoroutines.Start(AddressableShaderCache.ReloadAddressableShaders(castedRes));
-            }
-        }
-
         private void Update()
         {
     #if NET6_0

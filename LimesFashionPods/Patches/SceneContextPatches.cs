@@ -17,12 +17,13 @@ internal static class SceneContextPatches
     [HarmonyPrefix]
     private static void SceneContextAwakePatch(LookupDirector __instance)
     { 
+        MelonCoroutines.Start(AddressableShaderCache.CacheAddressableShaders());
         PodManager.Register();
     }
 
     [HarmonyPatch(typeof(RegisteredActorBehaviour), nameof(RegisteredActorBehaviour.OnEnable))]
     [HarmonyPostfix]
-    private static void ParticleSystemPlayPatch(RegisteredActorBehaviour __instance)
+    private static void RegActorBehaviour(RegisteredActorBehaviour __instance)
     {
         var instance = __instance.TryCast<Gadget>();
         if (instance == null) return;
@@ -32,7 +33,7 @@ internal static class SceneContextPatches
 
     [HarmonyPatch(typeof(CFX_AutoDestructShuriken), nameof(CFX_AutoDestructShuriken.OnEnable))]
     [HarmonyPostfix]
-    private static void ParticleSystemPlayPatch(CFX_AutoDestructShuriken __instance)
+    private static void CFXOnEnablePatch(CFX_AutoDestructShuriken __instance)
     {
         MelonCoroutines.Start(AddressableShaderCache.ReloadAddressableShaders(__instance.gameObject));
     }
