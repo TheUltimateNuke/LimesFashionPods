@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LimesFashionPods", "LimesFashionPods\LimesFashionPods.csproj", "{413AA262-43D7-4589-A73C-C91CB86C04E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{413AA262-43D7-4589-A73C-C91CB86C04E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{413AA262-43D7-4589-A73C-C91CB86C04E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{413AA262-43D7-4589-A73C-C91CB86C04E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{413AA262-43D7-4589-A73C-C91CB86C04E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
