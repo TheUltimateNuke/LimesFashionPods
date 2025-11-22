@@ -65,7 +65,7 @@ namespace LimesFashionPods.Behaviours
                 configurableJoint.linearLimitSpring = softJointLimitSpring;
                 configurableJoint.angularXLimitSpring = softJointLimitSpring;
                 configurableJoint.angularYZLimitSpring = softJointLimitSpring;
-                configurableJoint.breakForce = 20f;
+                configurableJoint.breakForce = 35f;
                 _fashionJoint = configurableJoint;
                 fashionItemPosRes.localRotation = Quaternion.Euler(Vector3.zero);
             }
