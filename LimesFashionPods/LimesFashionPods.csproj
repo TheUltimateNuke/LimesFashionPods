@@ -5,7 +5,7 @@
         <RootNamespace>$(AssemblyName)</RootNamespace>
         <Author>TheUltimateNuke</Author>
         <Version>1.0.0</Version>
-        
+
         <TargetFramework>net6.0</TargetFramework>
         <LangVersion>12</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -40,10 +40,10 @@
 
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
-    
+
     <ItemGroup>
-        <EmbeddedResource Include="Assets/**/*" />
-        
+        <EmbeddedResource Include="Assets/**/*"/>
+
         <!-- MelonLoader Packages - Feel free to remove some if unused -->
         <PackageReference Include="LavaGang.MelonLoader" Version="0.7.1"/>
         <PackageReference Include="Il2CppInterop.Common" Version="1.4.6-ci.579"/>
@@ -60,11 +60,6 @@
 
     <ItemGroup>
         <GameDirFile Include="$(ProjectDir)..\game_dir.txt"/>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Assets\" />
-      <Folder Include="ref\" />
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
@@ -103,5 +98,5 @@ namespace $(RootNamespace)
         </ItemGroup>
         <WriteLinesToFile Lines="$(GeneratedText1)" File="$(GeneratedFile1Path)" WriteOnlyWhenDifferent="true" Overwrite="true"/>
     </Target>
-    
+
 </Project>

@@ -10,7 +10,7 @@ internal static class SceneContextPatches
     [HarmonyPatch(typeof(LookupDirector), nameof(LookupDirector.Awake))]
     [HarmonyPrefix]
     private static void LookupDirectorAwakePatch(LookupDirector __instance)
-    { 
+    {
         // Essentially the mod's main entry point.
         PodManager.Register();
     }
@@ -26,28 +26,13 @@ internal static class SceneContextPatches
     }
 
     [HarmonyPatch(typeof(AttachFashions), nameof(AttachFashions.GetParentForSlot))]
-    [HarmonyPostfix]
-    private static void FashionExtendSlotsPatch(AttachFashions __instance, FashionSlot slot, ref Transform __result)
-    {
-        switch (slot)
-        {
-            case PodManager.SecondaryFaceSlot:
-                __result = __instance.transform.Find("model_slime_v4/bone_root/bone_slime/bone_core/bone_jiggle_bac");
-                break;
-        }
-    }
-
-    [HarmonyPatch(typeof(AttachFashions), nameof(AttachFashions.GetParentForSlot))]
     [HarmonyPrefix]
     [HarmonyPriority(Priority.Last)]
     private static bool FashionGordoFixPatch(AttachFashions __instance, FashionSlot slot, ref Transform __result)
     {
-        if (__instance._gordoModel == null || !__instance.GordoMode)
-        {
-            return true;
-        }
+        if (__instance._gordoModel == null || !__instance.GordoMode) return true;
         // Fixes gordo fashion slot parenting.
-        
+
         switch (slot)
         {
             case FashionSlot.FRONT:
